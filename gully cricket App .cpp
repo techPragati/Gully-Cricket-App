@@ -50,7 +50,7 @@ startInning(1);
 selectBatsmanOrBowler(a,b);
 a.runs=playInning();
 displayScore(a);
- cout << "\n*********** TeamB needs " << score1 + 1 << " runs to win ***********" << endl << endl;
+ cout << "\n*********** TeamB needs " << a.runs + 1 << " runs to win ***********" << endl << endl;
 
 startInning(2);
 selectBatsmanOrBowler(b,a);
@@ -156,7 +156,7 @@ void displayScore(Team a) {
     cout << "----------------------------------------------------" << endl << endl;
 }
 /* Decide winner by comparing final scores of both the teams */
-void decideWinner(Teama,Team b)
+void decideWinner(Team a,Team b)
 {
     
    	cout << "----------------------------------------------------" << endl;
