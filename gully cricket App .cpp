@@ -21,10 +21,10 @@ class Team
  void welcomeUsers();
  void displayPlayers(Team,Team);
  void selectBatsmanOrBowler(Team,Team);
- void startInning(int inning);
+ void startInning(int);
  int playInning();
- void displayScore(int,Team);
- void decideWinner(int,int);
+ void displayScore(Team);
+ void decideWinner(Team,Team);
  string batsman,bowler;
 
 
@@ -48,16 +48,16 @@ int main()
 
 startInning(1);
 selectBatsmanOrBowler(a,b);
-int score1=playInning();
-displayScore(score1,a);
+a.runs=playInning();
+displayScore(a);
  cout << "\n*********** TeamB needs " << score1 + 1 << " runs to win ***********" << endl << endl;
 
 startInning(2);
 selectBatsmanOrBowler(b,a);
-int score2=playInning();
-displayScore(score2,b);
+b.runs=playInning();
+displayScore(b);
 
-decideWinner(score1,score2);
+decideWinner(a,b);
  return 0;
 }
 /* Greet users with a welcome message */ 
@@ -149,26 +149,26 @@ runs=runs+run;
 return runs; // Return the final run scored by the batting team 
 }
 /* Display runs scored by batting team in the inning */
-void displayScore(int score1,Team a) {
+void displayScore(Team a) {
     usleep(1000*1000);
  cout << "----------------------------------------------------" << endl;
-    cout << "\t\t " << a.name << " scored " <<score1 << " runs." << endl;
+    cout << "\t\t " << a.name << " scored " <<a.runs << " runs." << endl;
     cout << "----------------------------------------------------" << endl << endl;
 }
 /* Decide winner by comparing final scores of both the teams */
-void decideWinner(int teamAScore, int teamBScore)
+void decideWinner(Teama,Team b)
 {
     
    	cout << "----------------------------------------------------" << endl;
 
     usleep(1000*2000);
-     if(teamAScore>teamBScore)
+     if(a.runs>b.runs)
      {
      cout<<"\n\n\t\tTeam A is the Winner";
      }
      else
      {
-         if(teamAScore==teamBScore)
+         if(a.runs==b.runs)
          {
              cout<<"\n\n\t\tThe match was tied";
          }
