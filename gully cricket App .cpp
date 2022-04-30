@@ -106,25 +106,19 @@ void startInning(int inning)
 {
     cout<<"\n\tPRESS ENTER TO START THE INNINGS \n";
    cin.get();
-    string team1,team2;
+    
+	cout << "|------------ Inning " << inning << " Starts ------------|" << endl;
     if(inning ==1)
     {
-        cout << "|------------ Inning " << inning << " Starts ------------|" << endl;
-         
-      team1="A";
-      team2="B";
+     cout << "|----- Team A is batting and Team B is bowling -----|" << endl << endl;
     }
     else
     {
         if(inning==2)
         {
-            cout << "|------------ Inning " << inning << " Starts ------------|" << endl;
-            
-            team1="B";
-            team2="A";
+    	 cout << "|----- Team B is batting and Team A is bowling -----|" << endl << endl;
         }
     }
-    cout << "|----- " <<team1<< " is batting and " <<team2<< " is bowling -----|" << endl << endl;
     
 cout<<"\n\nSelecting Batsman and Bowler for the innings....Please wait....\n\n"<<endl;
 usleep(1000*2000);
